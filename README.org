@@ -1,0 +1,21 @@
+#+title: Yasnippet-Snippets: Treesitter Modes Shim
+
+* Why
+Emacs 29 provides native tree-sitter support.  But currently the functionality is
+not integrated in the existing major modes, instead there exist new
+~<major-mode>-ts-mode~ modes, which must explicitly be used to enjoy the new
+tree-sitter based syntax highlighting.  The problem with this approach is, that
+if you use e.g. ~c-ts-mode~, the yasnippet-snippets for ~c-mode~ are not
+loaded.
+
+* How
+The goal is to create an easy to setup and at the same time easy to remove
+workaround, as long as it is required, which needs minimal
+configuration. Therefore the [[https://joaotavora.github.io/yasnippet/snippet-organization.html#org7468fa9][.yas-parents]] feature is used, to create a folder,
+for each ~-ts-mode~ and link it to the snippets for the original mode.
+
+* Setup
+After cloning the repository, make sure to include this snippet repository via
+#+begin_src elisp
+(add-to-list 'yas-snippet-dirs "/path/to/yasnippet-treesiter-shim/snippets/")
+#+end_src
