@@ -17,5 +17,5 @@ for each ~-ts-mode~ and link it to the snippets for the original mode.
 * Setup
 After cloning the repository, make sure to include this snippet repository via
 #+begin_src elisp
-(add-to-list 'yas-snippet-dirs "/path/to/yasnippet-treesiter-shim/snippets/")
+(add-to-list 'yas-snippet-dirs "/path/to/yasnippet-treesitter-shim/snippets/")
 #+end_src
