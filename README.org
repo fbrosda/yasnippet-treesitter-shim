@@ -17,5 +17,18 @@ for each ~-ts-mode~ and link it to the snippets for the original mode.
 * Setup
 After cloning the repository, make sure to include this snippet repository via
 #+begin_src elisp
-(add-to-list 'yas-snippet-dirs "/path/to/yasnippet-treesiter-shim/snippets/")
+(add-to-list 'yas-snippet-dirs "/path/to/yasnippet-treesitter-shim/snippets/")
+#+end_src
+
+If you are using [[https://github.com/radian-software/straight.el][the =straight.el= package manager]] with =use-package=,
+you can use the following to achieve the same:
+
+#+begin_src elisp
+(use-package yasnippet-treesitter-shim
+  :straight (:host github :repo "fbrosda/yasnippet-treesitter-shim"
+                   :files ("snippets/*"))
+  :no-require t
+  :config
+  (add-to-list 'yas-snippet-dirs
+               (straight--build-dir "yasnippet-treesitter-shim")))
 #+end_src
