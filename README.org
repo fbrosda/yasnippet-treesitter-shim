@@ -1,5 +1,8 @@
 #+title: Yasnippet-Snippets: Treesitter Modes Shim
 
+This is no longer necessary with Emacs 30, as now the -ts-modes are sub-modes of
+the regular major modes.  s.a. the paragraph in [[https://github.com/emacs-mirror/emacs/blob/master/etc/NEWS.30#L82][NEWS]].
+
 * Why
 Emacs 29 provides native tree-sitter support.  But currently the functionality is
 not integrated in the existing major modes, instead there exist new
